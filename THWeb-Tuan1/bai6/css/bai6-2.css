@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 5px auto;
+}
+.container {
+    width: 800px;
+    border: 1px solid black;
+    padding: 5px;
+}
+.message {
+    width: 95%;
+    height: 300px;
+    position: relative;
+    border: 1px solid black;
+}
+.howyou {
+    width: 95%;
+    height: 80px;
+    position: relative;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+.message1 {
+    position: absolute;
+    top: -5%;
+    left: 5%;
+    background-color: rgb(255, 255, 255);
+}
+.message2 {
+    position: absolute;
+    top: -15%;
+    left: 5%;
+    background-color: rgb(255, 255, 255);
+}
+.table1, .table2 {
+    position: absolute;
+   left: 5%;
+}
+#mess {
+    width: 500px;
+    height: 150px;
+}

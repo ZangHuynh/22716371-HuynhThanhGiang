@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 5px;
+ }
+ #class{
+    width: 1000px;
+    padding: 10px;
+    border: 1px solid black;
+ }

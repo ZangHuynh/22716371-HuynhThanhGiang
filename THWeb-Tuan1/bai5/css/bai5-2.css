@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 5px auto;
+}
+
+#bai52 {
+    width: 800px;
+    border: 1px solid plum;
+    padding: 10px;
+}
+
+#table1 {
+    border: 1px solid purple;
+}

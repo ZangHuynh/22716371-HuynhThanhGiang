@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 5px;
+}
+#bai7{
+    width: 1000px;
+    border: 1px solid black;
+    padding: 10px;
+}
