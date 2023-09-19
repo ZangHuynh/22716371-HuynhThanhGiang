@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+    margin: 5px auto;
+}
+#container{
+    width: 1000px;
+    height: 700px;
+    padding: 5%;
+    text-align: center;
+    background-image: url(../image/background.jpg);
+}

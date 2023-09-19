@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 5px auto;
+}
+
+#container {
+    width: 1300px;
+    border: 1px solid pink;
+}
+
+header {
+    color: rgb(250, 109, 132);
+    text-align: center;
+    text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+}
+
+#nav1 {
+    border-top: 1px solid rgb(207, 2, 2);
+    border-bottom: 1px solid rgb(207, 2, 2);
+    background-color: rgb(252, 125, 125);
+}
+
+#nav2{
+    width: 20%;
+    height: 800px;
+    float: left;
+}
+
+section {
+    width: 56%;
+    height: 800px;
+    padding-left: 10px;
+    float: left;
+}
+
+#menu {
+    color: aliceblue;
+    padding-top: 3px;
+    float: right;
+    padding-right: 30%;
+}
+
+#nav1>img {
+    padding-top: 5px;
+    padding-left: 30%;
+}
+
+#nav2>img{
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px rgb(252, 125, 125), 0px 5px 5px rgb(252, 125, 125) ; <!-- x y blurdy%-->
+}
+
+.title{
+    width: 60%;
+    letter-spacing: 10px;
+    padding-left: 10px;
+    margin-left: 20%;
+    background-color: rgb(252, 235, 216);
+    color: rgb(194, 2, 2);
+}
+
+.back {
+    color: red;
+}
+
+#honey{
+    color: rgb(194, 194, 8);
+}
+
+.inp{
+    margin: 10px;
+    width: 250px;
+    height: 40px;
+}
+#cmt{
+    margin: 10px;
+    width: 520px;
+    height: 80px;
+}
+#but{
+    margin: 10px;
+}
+
+#nav2>ul>li{
+    color: aliceblue;
+    width: 200px;
+    list-style-type: none;
+    background-color: rgb(252, 125, 125);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-left: -40px;
+    padding: 5px;
+    padding-left: 20px;
+    float: left;
+}
+aside{
+    color: aliceblue;
+    width: 24%;
+    height: 800px;
+    float: right;
+}
+#aside{
+    background-color: black;
+}
+.imga{
+    margin-top: -1px;
+    width: 90%;
+}
+#texta{
+    margin-top: 20px;
+    padding-bottom: 1px;
+    margin-left: 20px;
+}
+.readm{
+    color: rgb(239, 173, 173);
+    list-style-type: none;
+    text-decoration: underline;
+}
+
+footer{
+    clear: both;
+    height: 90px;
+    font-size: larger;
+    color: aliceblue;
+    background-color: rgb(252, 125, 125);
+    padding-top: 20px;
+    text-align: center;
+    border: 1px solid black;
+}
+.v{
+    color: red;
+    text-decoration: underline;
+}
