@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<nav id="nav1" class="navbar">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="navbar-header col-sm-3">
+					<a href="#" class="navbar- title" style="font-size: 28px; color: aliceblue;">Feane</a>
+				</div>
+				<ul class="nav navbar-nav col-sm-4">
+					<li><a href="../html/home.html">HOME</a></li>
+					<li><a href="../html/menu.html">MENU</a></li>
+					<li><a href="../html/about.html">ABOUT</a></li>
+					<li><a href="../html/book.html">BOOK TABLE</a></li>
+				</ul>
+				<div class="online col-sm-3">
+					<a href="#" class="glyphicon glyphicon-user"></a>
+					<a href="#" class="glyphicon glyphicon-shopping-cart"></a>
+					<a href="#" class="glyphicon glyphicon-search"></a>
+					<a href="#order"><button type="button" class="button">Online Order</button></a>
+				</div>
+			</div>
+		</nav>
+		<section>
+			<div class="row">
+				<div class="col-sm-6"></div>
+				<div class="col-sm-2">
+					<h1 class="title">Our Menu</h1>
+				</div>
+				<div class="col-sm-4"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-5"></div>
+				<nav class="navbar col-sm-4" id="nav2">
+					<ul class="nav navbar-nav">
+						<li><a href="#" class="active">All</a></li>
+						<li><a href="#">Burger</a></li>
+						<li><a href="#">Pizza</a></li>
+						<li><a href="#">Pasta</a></li>
+						<li><a href="#">Fries</a></li>
+					</ul>
+				</nav>
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="row" id="food">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-3 jumbotron pizza">
+					<div class="row jumbotron"><img src="../images/f1.png" alt="f1.png"></div><br><br>
+					<h3>Delicious Pizza</h3>
+					<span>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</span>
+					<h4>$20</h4>
+					<div class="shop"><span class="glyphicon glyphicon-shopping-cart"></span></div>
+				</div>
+				<div class="col-sm-3 jumbotron pizza">
+					<div class="row jumbotron"><img src="../images/f2.png" alt="f2.png"></div><br><br>
+					<h3>Delicious Burger</h3>
+					<span>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</span>
+					<h4>$15</h4>
+					<div class="shop"><span class="glyphicon glyphicon-shopping-cart"></span></div>
+				</div>
+				<div class="col-sm-3 jumbotron pizza">
+					<div class="row jumbotron"><img src="../images/f3.png" alt="f3.png" style="margin-top: -30px;"></div><br><br>			
+					<h3>Delicious Pizza</h3>
+					<span>Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque</span>
+					<h4>$17</h4>
+					<div class="shop"><span class="glyphicon glyphicon-shopping-cart"></span></div>
+				</div>
+			</div>
+		</section>
+		<div class="dialog overlay" id="order">
+			<div class="dialog-body">
+				<a href="#" class="dialog-close"><button>&times;</button></a>
+				<h3 class="title-order">Order</h3>
+				<form class="form-order">
+					Telephone: 
+					<input type="tel" name="telephone" id="tele" size="65"><br>
+					Email: 
+					<input type="email" name="mail" id="email" size="65"><br>
+					<input type="checkbox" name="checkme" id="check"> Check me out
+				</form>
+				<div class="btn-bottom">
+					<div class="col-sm-7"></div>
+					<div class="col-sm-5">
+						<a href="#"><button>Order</button></a>
+						<a href="#"><button>Close</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

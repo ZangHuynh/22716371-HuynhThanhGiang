@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BOOK</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/book.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<nav class="navbar">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="navbar-header col-sm-3">
+					<a href="#" class="navbar- title" style="color: aliceblue;">Feane</a>
+				</div>
+				<ul class="nav navbar-nav col-sm-4">
+					<li><a href="../html/home.html">HOME</a></li>
+					<li><a href="../html/menu.html">MENU</a></li>
+					<li><a href="../html/about.html">ABOUT</a></li>
+					<li><a href="#">BOOK TABLE</a></li>
+				</ul>
+				<div class="online col-sm-3">
+					<a href="#" class="glyphicon glyphicon-user"></a>
+					<a href="#" class="glyphicon glyphicon-shopping-cart"></a>
+					<a href="#" class="glyphicon glyphicon-search"></a>
+					<a href="#order"><button type="button" class="button">Online Order</button></a>
+				</div>
+			</div>
+		</nav>
+		<section>
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-3">
+					<div class="section-title">
+						<h1 style="font-family: 'Brush Script MT', cursive;">Book A Table</h1>
+					</div>
+				</div>
+				<div class="col-sm-3"></div>
+				<div class="col-sm-2"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="contact-form">
+						<form>
+							<div class="form-group">
+								<input type="text" name="name" id="yname" placeholder="Your Name">
+								<input type="tel" name="tele" id="telephone" placeholder="Phone Number">
+								<input type="email" name="mail" id="email" placeholder="Your Email">
+								<input type="text" name="amount" id="amperson" placeholder="How namy persons?">
+								<input type="date" name="date" id="date" placeholder="dd/
+								mm/yyyy">
+							</div>
+							<div class="row">
+								<div class="col-sm-3"></div>
+								<div class="col-sm-3">
+									<button id="button">BOOK NOW</button>
+								</div>
+								<div class="col-sm-6"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="map-area">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2379302938293!2d-74.00863392481976!3d40.712778437569284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258fda88cefb3%3A0x7f1e88758d210007!2sNew%20York%20City%20Hall!5e0!3m2!1svi!2s!4v1696345938421!5m2!1svi!2s" width="500" height="350" style="border-radius: 5px;"></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="dialog overlay" id="order">
+			<div class="dialog-body">
+				<a href="#" class="dialog-close"><button>&times;</button></a>
+				<h3 class="title-order">Order</h3>
+				<form class="form-order">
+					Telephone: 
+					<input type="tel" name="telephone" id="tele" size="65"><br>
+					Email: 
+					<input type="email" name="mail" id="email" size="65"><br>
+					<input type="checkbox" name="checkme" id="check"> Check me out
+				</form>
+				<div class="btn-bottom">
+					<div class="col-sm-7"></div>
+					<div class="col-sm-5">
+						<a href="#"><button>Order</button></a>
+						<a href="#"><button>Close</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

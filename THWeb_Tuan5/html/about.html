@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<nav class="navbar">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="navbar-header col-sm-3">
+					<a href="#" class="navbar- title" style="color: aliceblue;">Feane</a>
+				</div>
+				<ul class="nav navbar-nav col-sm-4">
+					<li><a href="../html/home.html">HOME</a></li>
+					<li><a href="../html/menu.html">MENU</a></li>
+					<li><a href="../html/about.html">ABOUT</a></li>
+					<li><a href="../html/book.html">BOOK TABLE</a></li>
+				</ul>
+				<div class="online col-sm-3">
+					<a href="#" class="glyphicon glyphicon-user"></a>
+					<a href="#" class="glyphicon glyphicon-shopping-cart"></a>
+					<a href="#" class="glyphicon glyphicon-search"></a>
+					<a href="#order"><button type="button" class="button">Online Order</button></a>
+				</div>
+			</div>
+		</nav>
+		<section>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-3">
+				<img src="../images/about-img.png" alt="about-img">
+			</div>
+			<div class="col-sm-6 aboutsec">
+				<span class="title">We Are Feane</span>
+					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All</p>
+					<input type="submit" class="button" value="Read More">
+			</div>
+			<div class="col-sm-q"></div>
+		</section>
+		<div class="dialog overlay" id="order">
+			<div class="dialog-body">
+				<a href="#" class="dialog-close"><button>&times;</button></a>
+				<h3 class="title-order">Order</h3>
+				<form class="form-order">
+					Telephone: 
+					<input type="tel" name="telephone" id="tele" size="65"><br>
+					Email: 
+					<input type="email" name="mail" id="email" size="65"><br>
+					<input type="checkbox" name="checkme" id="check"> Check me out
+				</form>
+				<div class="btn-bottom">
+					<div class="col-sm-7"></div>
+					<div class="col-sm-5">
+						<a href="#"><button>Order</button></a>
+						<a href="#"><button>Close</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
