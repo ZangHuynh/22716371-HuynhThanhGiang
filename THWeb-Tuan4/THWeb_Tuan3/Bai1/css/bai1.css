@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+#container{
+    color: aliceblue;
+    width: 1000px;
+    height: 650px;
+    background-image: linear-gradient(rgb(193, 198, 255), rgb(80, 93, 240));
+}
+#container>div{
+    height: 70px;
+    padding: 10px;
+    border-bottom: 5px dotted white;
+}
+header>h1{
+    padding-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 5px #000000,0 0 20px #0011ff, 0 0 30px #0011ff, 2px 2px 2px rgba(206,89,55,0);
+    float: right;
+}
+nav{
+    padding: 10px;
+    padding-left: 20px;
+    word-spacing: 20px;
+}
+section{
+    width: 50%;
+    height: 500px;
+    padding: 10px;
+    float: left;
+}
+section>div{
+    width: 200px;
+    line-height: 25px;
+    float: left;
+}
+section>form>input, #title{
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+#cmt{
+    border-radius: 5px;
+    height: 100px;
+}
+#submit{
+    padding-left: 200px;
+}
+#submit>input{
+    border-radius: 5px;
+    border: 2px dashed rgb(0, 0, 193);
+
+}
+aside{
+    width: 50%;
+    height: 500px;
+    color: #0011ff;
+    padding-left: 10px;
+    float: right;
+}
+aside>h1{
+    text-shadow: 2px 2px 0px #0011ff, 2px 2px 2px rgba(206,89,55,0);
+}
+aside>h3{
+    padding-left: 50px;
+}
+img{
+    padding-top: 5%;
+    width: 90%;
+}
+footer{
+    clear: both;
+    width: 100%;
+    height: 80px;
+    padding-top: 25px;
+    border-top: 5px dotted white;
+    text-align: center;
+}
