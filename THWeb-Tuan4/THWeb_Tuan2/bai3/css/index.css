@@ -1,8 +1,0 @@
-*{
-    box-sizing: border-box;
-    margin: 5px auto;
-}
-.container{
-    padding: 5%;
-    background-image: url(../image/background.jpg);
-}
