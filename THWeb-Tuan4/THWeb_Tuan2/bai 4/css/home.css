@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.container{
+    border: 1px solid gray;
+}
+.title{
+    color: rgb(250, 201, 3);
+}
+header{
+    border-bottom: 5px solid rgb(250, 201, 3);
+}
+nav{
+    background-image: url(../image/back.jpg);
+    background-size: 100% ;           
+}
+nav>ul>li{
+    padding: 10px;
+    position: relative;
+    right: 30px;
+    list-style-type: none;
+    border-bottom: 4px dashed rgb(206, 172, 37);
+}
+article{
+    padding: 20px;
+    margin: 10px;
+    border: 6px solid rgb(249, 207, 43);
+    box-shadow: 6px 6px 10px rgb(172, 144, 29);
+    float: right;
+}
+section{
+    color: brown;
+    padding: 20px;
+}
+
+footer{
+    border-top: 5px solid rgb(249, 207, 43);
+    text-align: center;
+    padding-top: 40px;
+    color: rgb(250, 201, 3);
+}

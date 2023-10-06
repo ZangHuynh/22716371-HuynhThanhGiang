@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/bai1.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <h1>EXAMPlE CAFE MENU</h1>
+            </div>
+        </header>
+        <nav class="navbar">
+			<div class="row">
+				<div class="col-xs-3  col-sm-3 col-md-3"></div>
+				<div class="col-xs-8  col-sm-8 col-md-8">
+                    <ul class="nav navbar-nav">
+                        <li class="gly-input"><span class="glyphicon glyphicon-home"></span></li>
+                        <li><a href="#">STARTER</a></li>
+                        <li><a href="#">MAIN COURSES</a></li>
+                        <li><a href="#">DERSERTS</a></li>
+                        <li class="gly-input"><input type="search"></li>
+                        <li class="gly-input"><button>Go</button></li>
+                    </ul>
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-1"></div>
+			</div>
+		</nav>
+        <div class="row">
+            <nav id="nav2" class="col-xs-3 col-sm-3 col-md-3">
+                <ul>
+                    <li>Cafe Latte</li>
+                    <li>Capuchino</li>
+                    <li>Ocean Blue</li>
+                    <li>Ice-cream Cafe</li>
+                    <li>Order Online</li>
+                </ul>
+                <img src="../image/company.png" alt="img">
+            </nav>
+            <section class="col-xs-6 col-sm-6 col-md-6">
+                <h1 class="title">Starter</h2>
+                    <ul>
+                        <li>Chesnut and Mushroom Goujons <span class="v">(V)</span></li>
+                        <li>Goat Cheese <span class="v">(V)</span></li>
+                        <li id="honey">HONEY SOY CHICKEN KEBABS <span class="v">(V)</span></li>
+                        <li>Seafood salad <span class="v">(V)</span></li>
+                        </ul>
+                    <a href="#nav1" class="back">Back to Top</a>
+                <h1 class="title">Desserts</h2>
+                    <ul>
+                        <li>Lemon Sorbet <span class="v">(V)</span></li>
+                        <li>Chocolate Mud Pie <span class="v">(V)</span></li>
+                        <li>Pecan Pie <span class="v">(V)</span></li>
+                        <li>Selection of fine Cheeses from around the World <span class="v">(V)</span></li>
+                    </ul>
+                    <a href="#nav1" class="back">Back to Top</a>
+                <h1 class="title">INFORMATION</h1>
+                    <form action="input">
+                        <input type="text" class="inp" placeholder="First Name">
+                        <input type="text" class="inp" placeholder="Last Name">
+                        <input type="email" class="inp" placeholder="Email">
+                        <input type="tel" class="inp" placeholder="Telephone">
+                        <select name="add" class="inp">
+                            <option value="USA">USA</option>
+                            <option value="Viet">Vietnamese</option>
+                        </select>
+                        <input type="radio" name="addr" >Vietnamese
+                        <input type="radio" name="addr" >Foreigner
+                        <textarea name="cmt" id="cmt" cols="30" rows="10" placeholder="Comment"></textarea>
+                        <div id="but">
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Cancel">
+                        </div>
+                    </form>
+            </section>
+            <aside class="col-xs-3 col-sm-3 col-md-3">
+                <div id="aside">
+                    <h1>Events</h1>
+                    <div id="texta">
+                        <h3>Regular Meetings</h3>
+                        <img src="../image/meeting.png" alt="img" class="imga">
+                        Host your regular team meetings or activities in the comfort of your own private room. 
+                        <details>
+                            <summary class="readm">Read more...</summary>
+                            Charge up on Kith's aromatic coffee and delectable dishes for that extra boost in your work!
+                        </details>
+                        <h3>Product Launches</h3>
+                        <img src="../image/launch.png" alt="img" class="imga">
+                        Launch your product with ease in a space that truly fits its image. 
+                        <details>
+                            <summary class="readm">Read more...</summary>
+                            Create an unforgettable experience for your guests with our spacious outlets! Whether you want to host an intimate celebration or launch an event for hundreds of guests, Kith's space is customisable to your needs
+                        </details>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <footer class="col-xs-12 col-sm-12 col-md-12">
+            <address>ABC <sup>&#169;</sup> Company-12345678-abccoffee@gmail.com</address>
+        </footer>
+    </div>
+</body>
+</html>
