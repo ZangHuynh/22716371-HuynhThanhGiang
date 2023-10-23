@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/THWeb-Tuan7/css/bootstrap.min.css">
+	<script src="/THWeb-Tuan7/js/jquery-3.6.0.min.js"></script>
+	<script src="/THWeb-Tuan7/js/bootstrap.min.js"></script>
+	<style>
+		.table1{
+			color: blue;
+		}
+		.ttle{
+			color: rgb(0, 0, 255);
+			background-color: grey;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<img src="../images/banner_car.jpg" alt="img" >
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<table class="table table1 text-center border">
+						<tr>
+							<th colspan="2" style="color: rgb(0, 0, 148);" class="ttle">Bang tin thi truong</th>
+						</tr>
+						<tr>
+							<th colspan="2" class="ttle">Vang</th>
+						</tr>
+						<tr>
+							<th class="border">Mua vao</th>
+							<th class="border">Ban ra</th>
+						</tr>
+						<tr>
+							<td class="border" id="vang-muavao"></td>
+							<td class="border" id="vang-banra"></td>
+						</tr>
+						<tr>
+							<th colspan="2" class="ttle">USD</th>
+						</tr>
+						<tr>
+							<th class="border">Mua vao</th>
+							<th class="border">Ban ra</th>
+						</tr>
+						<tr>
+							<td class="border" id="usd-muavao"></td>
+							<td class="border" id="usd-banra"></td>
+						</tr>
+				</table>
+			</div>
+			<div class="col-md-4">
+				<form action="">
+					<table class="table text-center border" style="background-color: grey;">
+						<tr>
+							<th colspan="3">Cap nhat gia ca thi truong</th>
+						</tr>
+						<tr>
+							<th class="border"><label for="muavao">Mua vao</label></th>
+							<td colspan="2">
+								<input type="text" name="muavao" id="muavao">
+							</td>
+						</tr>
+						<tr>
+							<th class="border"><label for="banra">Ban ra</label></th>
+							<td colspan="2">
+								<input type="text" name="banra" id="banra">
+							</td>
+						</tr>
+						<tr>
+							<th class="border"><label for="typecar">Loai xe</label></th>
+							<td colspan="2">
+								<select name="typecar" id="typecar">
+									<option value="Toyota">Toyota</option>
+									<option value="KIA">KIA</option>
+									<option value="Ford">Ford</option>
+									<option value="Civic">Civic</option>
+									<option value="Ferrari">Ferrari</option>
+									<option value="Mecedes">Mecedes</option>
+								</select>								
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="border"><input type="radio" name="currency" id="vang" value="Vang">Vang</td>
+							<td class="border"><input type="radio" name="currency" id="usd" value="USD">USD</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><button id="update-btn">Update</button></td>
+							<td><button id="state-btn">State</button></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="col-md-4">
+				<table class="table text-center">
+					<tr>
+						<th class=" bg-dark">Bang bao gia</th>
+					</tr>
+					<tr>
+						<td id="mota" style="color: blue;"></td>
+					</tr>
+					<tr>
+						<td id="image"></td>
+					</tr>
+					<tr>
+						<td id="giaban" style="color: greenyellow;"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$("#typecar").change(function() {
+				var selectedCar = $(this).val();
+				var carInfo = {
+					"Toyota": {
+						mota: "Mô tả Toyota",
+						image: "../images/car1.jpg",
+						giaban: "35000"
+					},
+					"KIA": {
+						mota: "Mô tả KIA",
+						image: "../images/car2.jpg",
+						giaban: "15000"
+					},
+					"Ford": {
+						mota: "Mô tả Ford",
+						image: "../images/car3.jpg",
+						giaban: "40000"
+					},
+					"Civic": {
+						mota: "Mô tả Civic",
+						image: "../images/car4.jpg",
+						giaban: "32000"
+					},
+					"Ferrari": {
+						mota: "Mô tả Ferrari",
+						image: "../images/car5.jpg",
+						giaban: "50000"
+					},
+					"Mecedes": {
+						mota: "Mô tả Mecedes",
+						image: "../images/car7.jpg",
+						giaban: "45000"
+					}
+				};
+
+				var selectedCarInfo = carInfo[selectedCar];
+
+				$("#mota").text(selectedCarInfo.mota);
+				$("#image").html('<img src="' + selectedCarInfo.image + '" alt="' + selectedCar + '">');
+				$("#giaban").text('Gia: ' + selectedCarInfo.giaban + 'USD');
+			});
+
+			$("#update-btn").click(function() {
+				event.preventDefault();
+				var muavao = parseFloat($("#muavao").val());
+				var banra = parseFloat($("#banra").val());
+
+				var currency = $("input[name='currency']:checked").val();
+
+				if (!isNaN(muavao) && !isNaN(banra)) {
+					if (currency === "Vang") {
+						$("#vang-muavao").text(muavao);
+						$("#vang-banra").text(banra);
+
+						$("#usd-muavao").text("");
+						$("#usd-banra").text("");
+					} else if (currency === "USD") {
+						$("#usd-muavao").text(muavao);
+						$("#usd-banra").text(banra);
+
+						$("#vang-muavao").text("");
+						$("#vang-banra").text("");
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>

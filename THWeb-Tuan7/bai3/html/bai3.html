@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 3</title>
+    <link rel="stylesheet" href="/THWeb-Tuan7/css/bootstrap.min.css">
+    <script src="/THWeb-Tuan7/js/jquery-3.6.0.min.js"></script>
+    <script src="/THWeb-Tuan7/js/bootstrap.min.js"></script>
+	<style>
+		span{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form action="thongtin.html">
+                <table class="table-success" border="1">
+                    <tr>
+                        <th colspan="3" class="text-center">Register From</th>
+                    </tr>
+                    <tr>
+                        <th><label for="name">Ho va Ten (*): </label></th>
+                        <td>
+                            <input type="text" name="name" id="name"><br>
+                            <span id="names"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user">Ten Dang nhap (*): </label></th>
+                        <td>
+                            <input type="text" name="user" id="user"><br>
+                            <span id="users"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="pass">Mat khau (*): </label></th>
+                        <td>
+                            <input type="password" name="pass" id="pass"><br>
+                            <span id="passes"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="apass">Xac nhan mat khau (*): </label></th>
+                        <td >
+                            <input type="password" name="apass" id="apass"><br>
+                            <span id="apasses"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="bdate">Ngay sinh: </label></th>
+                        <td><input type="date" name="bdate" id="bdate"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="tele">Dien thoai: </label></th>
+                        <td><input type="tel" name="tele" id="tele"><br><span id="teles"></span></td>
+                    </tr>
+                    <tr>
+                        <th><label for="addr">Dia chi: </label></th>
+                        <td><input type="text" name="addr" id="addr"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="mail">Email khac: </label></th>
+                        <td><input type="email" name="mail" id="mail"><br><span id="emails"></span></td>
+                    </tr>
+                    <tr>
+                        <th><label for="favor">So thich: </label></th>
+                        <td>
+                            <select name="favor" id="favor">
+                                <option value="Ca Nhac">Ca Nhac</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button id="btn-dk">Dang ky</button>
+                            <button id="btn-huy">Huy</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn-dk").click(function(event){
+                event.preventDefault();
+
+                var flName = $("#name").val();
+                var userName = $("#user").val();
+                var password = $("#pass").val();
+				var bdate = $("#bdate").val();
+                var againPass = $("#apass").val();
+                var tele = $("#tele").val();
+				var addr = $("#addr").val();
+				var favor = $("#favor").val();
+                var email = $("#mail").val();
+
+                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+                $("#names, #users, #passes, #apasses, #teles, #emails").text("");
+
+                var valid = true;
+
+                if(!flName) {
+                    $("#names").text("Vui long nhap ten.");
+                    $("#name").focus();
+                    valid = false;
+                }
+                if(userName.length < 6) {
+                    $("#users").text("Ten dang nhap it nhat phai co 6 ky tu.");
+                    $("#user").focus();
+                    valid = false;
+                }
+                if(!password) {
+                    $("#passes").text("Vui long nhap mat khau.");
+                    $("#pass").focus();
+                    valid = false;
+                }
+                if(password !== againPass) {
+                    $("#apasses").text("Mat khau xac nhan khong khop.");
+                    $("#apass").focus();
+                    valid = false;
+                }
+                if(tele && isNaN(tele)) {
+                    $("#teles").text("Dien thoai phai la so.");
+                    $("#tele").focus();
+                    valid = false;
+                }
+                if(email && !emailPattern.test(email)) {
+                    $("#emails").text("Email khong hop le.");
+                    $("#mail").focus();
+                    valid = false;
+                }
+                if(valid) {
+					sessionStorage.setItem("name", flName);
+					sessionStorage.setItem("user", userName);
+					sessionStorage.setItem("pass", password);
+					sessionStorage.setItem("bdate", bdate);
+					sessionStorage.setItem("tele", tele);
+					sessionStorage.setItem("addr", addr);
+					sessionStorage.setItem("favor", favor);
+					sessionStorage.setItem("email", email);
+
+					window.location.href = "thongtin.html";
+				}
+            });
+        });
+    </script>
+</body>
+</html>

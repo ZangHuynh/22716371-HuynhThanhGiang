@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Thong Tin DK</title>
+	<link rel="stylesheet" href="/THWeb-Tuan7/css/bootstrap.min.css">
+	<script src="/THWeb-Tuan7/js/jquery-3.6.0.min.js"></script>
+	<script src="/THWeb-Tuan7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+				<table class="table-success" border="1">
+					<tr>
+						<th colspan="2" class="text-center">Register Information</th>
+					</tr>
+					<tr>
+						<th>Ho va Ten (*): </th>
+						<td id="names"></td>
+					</tr>
+					<tr>
+						<th>Ten Dang nhap (*): </th>
+						<td id="users"></td>
+					</tr>
+					<tr>
+						<th>Mat khau (*): </th>
+						<td id="passes"></td>
+					</tr>
+					<tr>
+						<th>Ngay sinh: </th>
+						<td id="bdate"></td>
+					</tr>
+					<tr>
+						<th>Dien thoai: </th>
+						<td id="tele"></td>
+					</tr>
+					<tr>
+						<th>Dia chi:</th>
+						<td id="addr"></td>
+					</tr>
+					<tr>
+						<th>Email khac: </th>
+						<td id="mail"></td>
+					</tr>
+					<tr>
+						<th>So thich: </th>
+						<td id="favor"></td>
+					</tr>
+				</table>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			var name = sessionStorage.getItem("name");
+			var user = sessionStorage.getItem("user");
+			var pass = sessionStorage.getItem("pass");
+			var bdate = sessionStorage.getItem("bdate");
+			var tele = sessionStorage.getItem("tele");
+			var addr = sessionStorage.getItem("addr");
+			var favor = sessionStorage.getItem("favor");
+			var email = sessionStorage.getItem("email");
+	
+			$("#names").text(name);
+			$("#users").text(user);
+			$("#passes").text(pass);
+			$("#bdate").text(bdate);
+			$("#tele").text(tele);
+			$("#addr").text(pass);
+			$("#favor").text(favor);
+			$("#mail").text(email);
+		});
+	</script>
+	
+	
+</body>
+</html>
