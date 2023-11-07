@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bài 3</title>
+	<link rel="stylesheet" href="/THWeb-Tuan8/css/bootstrap.min.css">
+	<script src="/THWeb-Tuan8/js/jquery-3.6.0.min.js"></script>
+	<script src="/THWeb-Tuan8/js/bootstrap.min.js"></script>
+    <style>
+		#registrationForm button {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+        <form id="registrationForm">
+            <div class="row border-bottom m-2 p-2">
+                <label for="name" class="col-md-4 text-right">Họ tên: </label>
+                <div class="col-md-8">
+                    <input type="text" id="name" class="form-control" required>
+                    <span id="errorHoten" class="text-danger font-italic">*</span>
+                </div>
+            </div>
+			<div class="row border-bottom m-2 p-2">
+                <label for="stuClass" class="col-md-4 text-right">Lớp: </label>
+                <select id="stuClass" class="col-md-8">
+                    <option value="ĐHKTPM18A">ĐHKTPM18A</option>
+                    <option value="ĐHKTPM18B">ĐHKTPM18B</option>
+                    <option value="ĐHKTPM18ATT">ĐHKTPM18ATT</option>
+                    <option value="ĐHKTPM18BTT">ĐHKTPM18BTT</option>
+                </select>
+            </div>
+            <div class="row border-bottom m-2 p-2">
+                <label for="subject" class="col-md-4 text-right">Môn Học: </label>
+                <select id="subject" class="col-md-8">
+					<option value="Lập trình hướng đối tượng">Lập trình hướng đối tượng</option>
+                    <option value="Hệ thống & công nghệ Web">Hệ thống & công nghệ Web</option>
+                    <option value="Tương tác người máy">Tương tác người máy</option>
+                    <option value="Hệ cơ sở dữ liệu">Hệ cơ sở dữ liệu</option>
+                </select>
+            </div>
+			<div class="row border-bottom m-2 p-2">
+                <label class="col-md-4 text-right">Loại: </label>
+                <div class="col-md-8">
+                    <input type="radio" id="subTypeLT" name="subjectType" checked>
+                    <label for="subTypeLT">LÝ THUYẾT</label>
+                    <input type="radio" id="subTypeTH" name="subjectType" class="ml-3">
+                    <label for="subTypeTH">THỰC HÀNH</label>
+                </div>
+            </div>
+            <div class="row justify-content-center p-2">
+                <button type="button" onclick="dangky()" id="submitButton">Dang ky </button>
+                </div>
+        </form>
+
+        <div class="row">
+            <table class="table table-hover table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>STT</th>
+                        <th>Họ tên</th>
+                        <th>LOẠI</th>
+                        <th>LỚP HỌC</th>
+                        <th>MÔN HỌC</th>
+                    </tr>
+                </thead>
+                <tbody id="tbl"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let i = 0;
+        
+        function dangky(){
+
+            let hoten = document.getElementById("name").value;
+            if(!hoten){
+                document.getElementById("errorHoten").textContent = "Họ tên bắt buộc nhập";
+                return false;
+            } else{
+                let namePattern = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
+                if(!namePattern.test(hoten)){
+                    document.getElementById("errorHoten").textContent = "Họ tên không hợp lệ";
+                    return false;
+                }else{
+                    document.getElementById("errorHoten").textContent = "";
+                }
+            }
+
+            let type = "LT";
+            if(document.getElementById("subTypeTH").checked)
+                type = "TH";
+
+            let monHoc = document.getElementById("subject").value;
+            let stuClass = document.getElementById("stuClass").value;
+
+            let row = "<tr><td>"+(++i)+"</td><td>" + hoten + "</td><td>" + type + "</td><td>" + stuClass + "</td><td>" + monHoc + "</td></tr>";
+
+            let myTable = document.getElementById("tbl");
+            let newRow = myTable.insertRow(myTable.rows.length);
+            newRow.innerHTML = row
+
+            return true;
+        }
+
+        document.getElementById("name").addEventListener("input", function () {
+            let submitButton = document.getElementById("submitButton");
+            if (this.validity.valid) {
+                submitButton.style.opacity = 1;
+                submitButton.style.pointerEvents = "auto";
+            } else {
+                submitButton.style.opacity = 0.5;
+                submitButton.style.pointerEvents = "none";
+            }
+        });
+    </script>
+</body>
+</html>

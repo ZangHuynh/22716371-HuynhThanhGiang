@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bai 1</title>
+	<link rel="stylesheet" href="/THWeb-Tuan8/css/bootstrap.min.css">
+	<script src="/THWeb-Tuan8/js/jquery-3.6.0.min.js"></script>
+	<script src="/THWeb-Tuan8/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">ĐĂNG KÝ TÀI KHOẢN</h1>
+		<div class="row">
+			<div class="col-md-12">
+				<form id="registrationForm">
+					<div class="row border-bottom m-2 p-2">
+						<label for="uname" class="col-md-4 text-right">Tên đăng nhập:</label>
+						<div class="col-md-8">
+							<input type="text" name="userName" id="uname" placeholder="txtDN" class="form-control">
+							<span id="errName" class="text-danger font-italic">*</span>
+						</div>
+					</div>
+					<div class="row border-bottom m-2 p-2">
+						<label for="password" class="col-md-4 text-right">Mật khẩu:</label>
+						<div class="col-md-8">
+							<input type="password" name="password" id="password" placeholder="txtMK"  class="form-control">
+							<span id="errPass" class="text-danger font-italic">*</span>
+						</div>
+					</div>
+					<div class="row border-bottom m-2 p-2">
+						<label for="agpass" class="col-md-4 text-right">Nhập lại mật khẩu:</label>
+						<div class="col-md-8">
+							<input type="password" name="agpassword" id="agpass" placeholder="txtXNMK" class="form-control">
+							<span id="errAPass" class="text-danger font-italic">*</span>
+						</div>
+					</div>
+					<div class="row border">
+						<h3 class="mx-auto">THÔNG TIN CÁ NHÂN</h3>
+					</div>
+					
+					<div class="row border-bottom m-2 p-2">
+						<label for="fname" class="col-md-4 text-right">Họ và Tên:</label>
+						<div class="col-md-8">
+							<input type="text" name="firstName" id="fname" placeholder="txtName" class="form-control">
+							<span id="errFName" class="text-danger font-italic">*</span>
+						</div>
+					</div>
+					<div class="row border-bottom m-2 p-2">
+						<label for="date" class="col-md-4 text-right">Ngày sinh:</label>
+						<div class="col-md-8">
+							<input type="date" name="date" id="date" class="form-control">
+							<span id="errDate" class="text-danger font-italic"></span>
+						</div>
+					</div>
+					<div class="row border-bottom m-2 p-2">
+						<label class="col-md-4 text-right">Giới tính:</label>
+						<div class="col-md-8">
+							<input type="radio" name="sex" id="nam" value="Name" checked>
+							<label for="nam">Nam</label>
+							<input type="radio" name="sex" id="nu" value="Nữ">
+							<label for="nu">Nữ</label>
+						</div>
+					</div>
+					<div class="row border-bottom m-2 p-2">
+						<label for="addr" class="col-md-4 text-right">Địa chỉ:</label>
+						<div class="col-md-8">
+							<input type="text" name="address" id="addr" placeholder="txtDC" class="form-control">
+							<span id="errAdd" class="text-danger font-italic"></span>
+						</div>
+					</div>
+					<div class="row border-bottom m-2 p-2">
+						<label for="tele" class="col-md-4 text-right">Điện thoại:</label>
+						<div class="col-md-8">
+							<input type="tel" name="tele" id="tele" placeholder="txtDT" class="form-control">
+							<span id="errPhone" class="text-danger font-italic"></span>
+						</div>
+					</div>
+					<div class="row border-bottom m-2 p-2">
+						<label for="mail" class="col-md-4 text-right">Email:</label>
+						<div class="col-md-8">
+							<input type="email" name="mail" id="mail" placeholder="txtEmail" class="form-control">
+							<span id="errMail" class="text-danger font-italic">*</span>
+						</div>
+					</div>
+					<div class="row justify-content-center p-2">
+						<button type="button" class="btn btn-dark" onclick="validSubmit()">Đăng ký</button>
+						<button type="reset" class="btn btn-dark ml-3">Hủy</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function validSubmit(){
+
+			let uName = document.getElementById("uname").value;
+			let namePattern = /^[A-Za-z0-9!@#$%^&*()+]+$/;
+			if (!namePattern.test(uName) || /\s/.test(uName)) {
+				document.getElementById("errName").textContent = "Tên đăng nhập không hợp lệ";
+				document.getElementById("uname").focus();
+				return false;
+			}else{
+				document.getElementById("errName").textContent = "";
+			}
+
+			let pass = document.getElementById("password").value;
+			let passPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!])[A-Za-z\d@#$%^&*!]{8,}$/;
+			if(!passPattern.test(pass)){
+				document.getElementById("errPass").textContent = "Mật khẩu không hợp lệ";
+				document.getElementById("password").focus();
+				return false;
+			}else{
+				document.getElementById("errPass").textContent = "";
+			}
+
+			let againPass = document.getElementById("agpass").value;
+			if(againPass != pass){
+				document.getElementById("errAPass").textContent = "Mật khẩu không trùng khớp";
+				document.getElementById("agpass").focus();
+				return false;
+			}else{
+				document.getElementById("errAPass").textContent = "";
+			}
+			
+			let firstName = document.getElementById("fname").value;
+			let fnamePattern = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
+			if(!fnamePattern.test(firstName)){
+				document.getElementById("errFName").textContent = "Nhập đúng họ và tên";
+				document.getElementById("fname").focus();
+				return false;
+			}else{
+				document.getElementById("errFName").textContent = "";
+			}
+			
+			let bdate = document.getElementById("date").value;
+			let today = new Date();
+            let birthDate = new Date(bdate);
+            let age = today.getFullYear() - birthDate.getFullYear();
+
+			if (today.getMonth() < birthDate.getMonth() || (today.getMonth() == birthDate.getMonth() && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+			if(!bdate){
+				document.getElementById("errDate").textContent = "Nhập ngày sinh";
+				document.getElementById("date").focus();
+				return false;
+			}else{
+				if (age < 16) {
+                	document.getElementById("errDate").textContent = "Bạn phải đủ 16 tuổi trở lên để đăng ký";
+					document.getElementById("date").focus();
+                	return false;
+            	}else{
+					document.getElementById("errDate").textContent = "";
+				}
+			}
+            
+
+			let address = document.getElementById("addr").value;
+			if(!address){
+				document.getElementById("errAdd").textContent = "Bắt buộc nhập địa chỉ";
+				document.getElementById("addr").focus();
+				return false;
+			}else{
+				document.getElementById("errAdd").textContent = "";
+			}
+
+			let telephone = document.getElementById("tele").value;
+			let phonePattern = /^(09|03|07|06|05|04)\d{8}$/;
+			if(!phonePattern.test(telephone)){
+				document.getElementById("errPhone").textContent = "Số điện thoại không hợp lệ";
+				document.getElementById("tele").focus();
+				return false;
+			}else{
+				document.getElementById("errPhone").textContent = "";
+			}
+
+			let mail = document.getElementById("mail").value;
+			let mailPattern = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+			if(!mailPattern.test(mail)){
+				document.getElementById("errMail").textContent = "Nhập đúng địa chỉ email";
+				document.getElementById("mail").focus();
+				return false;
+			}else{
+				document.getElementById("errMail").textContent = "";
+			}
+
+		}
+	</script>
+</body>
+</html>
